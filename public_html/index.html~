@@ -1,0 +1,149 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title> Mark Gorewicz's Home Page </title>
+    <meta http-equiv="x-UA-compatible" content="IE=edge" />
+    <style>
+      html
+      {
+	height:100%;
+      }
+      header
+      {
+        height:110px;
+        min-width:650px;
+	text-align:center;
+	border: 5px solid white;
+        background-color:#6A93EA;
+      }
+      .link
+      {
+        margin-left:5px;
+        margin-right:5px;
+      }
+      a:link {background-color:white; text-decoration:none;} 
+	<!-- a:visited {} -->
+      a:hover {background-color:white;}
+	<!-- a:active{} -->
+      body
+      {
+        height:100%;
+        min-width:600px;
+        text-align:center;
+        background-color:#6A93EA;
+      }
+      #content
+      {
+        height:73%;
+        min-height:20%;
+        background-image: url('images/mt.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
+      }
+      table, th, td
+      {	
+	margin-left:auto;
+	margin-right:auto;
+	border: 1px solid white;
+      }
+      table
+      {
+        margin-top:10%;
+        border-collapse:collapse;
+        align:center;
+      }
+      thead
+      {
+	text-align:center;
+	background-color:red;
+	color:white; 
+      }
+      tbody
+      {
+	text-align:right;
+	background-color:blue;
+        color:#AAA9AE;
+      }
+      footer
+      {
+        min-height:50px;
+        text-align:center;
+        border: 2px solid black;
+        background-color:#8D8A88;
+        margin-bottom:0;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="font-family:Book Antiqua">
+      <h1> Welcome to Mark Gorewicz's Home Page</h1>
+      <a href="index.html" class="link"> HOME </a>
+      <a href="assignments.html" class="link">CS 213 Assignments</a>
+    </header>
+    <div id="content">
+      <blockquote style="font-family:Arial Black; font-style:italic"  > 
+        <p>
+          "The unforgivable crime is soft hitting. 
+  	  Do not hit at all if it can be avoided; 
+	  but never hit softly."<br/>
+	  - Theodore Roosevelt
+        </p>
+      </blockquote>
+      <p style="color:white; border:2px solid black ; 
+                height:100px; width:200px; margin-left:10%;
+                margin-top:5%;
+                text-shadow:0px 1px black"> 
+        Mark Gorewicz is from West Linn, Oregon and is currently studying 
+        Computer Science at Brigham Young University - Idaho
+      </p>
+      <img src="images/eagle.jpg" alt="Eagle">
+      <table id="classes">
+        <thead>
+          <tr>
+            <th> Course # </td>
+            <th> Course Description </td>
+            <th> Sec # </td>
+            <th> Class Time </td> 
+            <th> Location </td>
+          </tr>
+	</thead>
+        <tbody>
+          <tr>
+	    <td> CS 213 </td>
+     	    <td> Web Engineering I</td>
+	    <td> 01 </td>
+	    <td> 9:45AM - 11:15AM TR</td>
+	    <td> AUS 208 </td>
+          </tr>
+          <tr>
+  	    <td> CS 237 </td>
+	    <td> Discrete Mathematics I</td>
+	    <td> 01 </td>
+	    <td> 11:30AM - 12:30PM MWF</td>
+	    <td> AUS 208 </td>
+          </tr>
+          <tr>
+	    <td> CS 246 </td>
+	    <td> Software Design and Development </td>
+	    <td> 01 </td>
+	    <td> 9:00AM - 10:00AM MWF</td>
+	    <td> AUS 210 </td>
+          </tr>
+          <tr>
+            <td> CS 371 </td>
+	    <td> Human-Computer Interaction </td>
+	    <td> 02 </td>
+	    <td> 3:15PM - 4:45PM TR</td>
+	    <td> AUS 210 </td>
+	  </tr>
+        </tbody>
+      </table>
+    </div> <!--content-->
+    <footer>
+      <p style="font-family:Lucida Console; font-weight:bold">
+         &copy 2013 Mark Gorewicz </p>
+    </footer>
+  </body>
+</html>

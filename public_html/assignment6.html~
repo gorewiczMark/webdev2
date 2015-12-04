@@ -1,0 +1,80 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Assignment 6</title>
+    <script type="text/javascript">
+     function isNumberKey(evt)
+     {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+     };
+
+     function phonenumber()  
+     {  
+        alert(here);
+        document.getElementById("total").value = "no";
+       var inputtxt = document.getElementById("phone");
+       var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;  
+       if((inputtxt.value.match(phoneno))  
+       {  
+         return true;  
+
+       }  
+       else  
+       {  
+         document.getElementById("total").value = inputtxt;
+         return false;  
+       }  
+     };
+    </script>
+  </head>
+  <body>
+    <h1> This will be assignment #6 </h1>
+    <form id="info">
+      <table>
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" name="firstname"></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" name="lastname"></td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td><textarea></textarea></td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td><input type="text" id="phone" 
+                     onkeypress="return isNumberKey()"
+                     onchange="phonenumber()">
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td><input type="checkbox" name="product" id="product1"></td>
+        </tr>
+        <tr>  
+          <td><input type="checkbox" name="product" id="product2"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="product" id="product3"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="product" id="product4"></td>
+        </tr>
+        <tr>  
+          <td>Total:</td>
+          <td><input type="textbox" readonly id="total"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

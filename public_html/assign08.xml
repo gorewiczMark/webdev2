@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bsa SYSTEM "assign07.dtd">
+<?xml-stylesheet type = "text/xsl" href = "assign08.xsl"?>
+
+<bsa>
+  <council Cname="Pacific"> 
+    <troop Tname="Tiger" number="701">
+      <scout>
+        <first> John </first>
+        <last> Smith </last>
+        <phone> 555-555-5555 </phone>
+        <address>
+          <street> 123 SW </street>
+          <city> Rexburg </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="3/2/08"> Tenderfoot </rank>
+        <meritBadge Mdate="12/31/07"> Camping </meritBadge>
+        <meritBadge Mdate="12/14/07"> Technology </meritBadge>
+        <meritBadge Mdate="01/21/08"> Archery </meritBadge>
+        <meritBadge Mdate="01/22/08"> First Aid </meritBadge>
+      </scout>
+      <scout>
+        <first> James </first>
+        <last> Jones </last>
+        <phone> 555-111-1111 </phone>
+        <address>
+          <street> 123 WE </street>
+          <city> Rexburg </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="12/12/08"> Tenderfoot </rank>
+        <rank Rdate="3/24/07"> 2nd Class </rank>
+        <meritBadge Mdate="2/4/07"> Camping </meritBadge>
+        <meritBadge Mdate="2/15/07"> Technology </meritBadge>
+        <meritBadge Mdate="12/12/07"> First Aid </meritBadge>
+      </scout>
+      <scout>
+        <first> Kyle </first>
+        <last> Perrson </last>
+        <phone> 555-555-2222 </phone>
+        <address>
+          <street> 234 ES </street>
+          <city> Rexburg </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="12/12/08">Tenderfoot</rank>
+        <rank Rdate="2/13/09">1st Class</rank>
+        <meritBadge Mdate="12/23/08"> Camping </meritBadge>
+        <meritBadge Mdate="11/30/08"> Hiking </meritBadge>
+        <meritBadge Mdate="2/12/09"> Technology </meritBadge>
+      </scout>
+      <scout>
+        <first> Danniel </first>
+        <last> Mannson </last>
+        <phone> 555-555-3333 </phone>
+        <address>
+          <street> 32 NW </street>
+          <city> Rexburg </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="12/12/9"> Tenderfoot </rank>
+        <rank Rdate="5/14/10"> 2nd Class </rank>
+        <rank Rdate="8/10/10"> 1st Class </rank>
+        <meritBadge Mdate="11/01/09"> Technology </meritBadge>
+        <meritBadge Mdate="12/15/09"> Sign Language </meritBadge>
+        <meritBadge Mdate="01/5/10"> Art </meritBadge>
+        <meritBadge Mdate="01/30/10"> Swimming </meritBadge>
+        <meritBadge Mdate="02/13/10"> Cooking </meritBadge>
+        <meritBadge Mdate="03/11/10"> Running </meritBadge>
+        <meritBadge Mdate="04/10/10"> Backpacking </meritBadge>
+        <meritBadge Mdate="04/13/10"> Huking </meritBadge>
+        <meritBadge Mdate="05/16/10"> Shooting </meritBadge>
+        <meritBadge Mdate="03/25/10"> Camping </meritBadge>
+        <meritBadge Mdate="04/05/10"> Citizenship Nation </meritBadge>
+      </scout>
+      <scout>
+        <first> Fred </first>
+        <last> George </last>
+        <phone> 555-555-4444 </phone>
+        <address>
+          <street> 329 SW </street>
+          <city> Rexburg </city>
+          <state> Idaho </state>
+        </address>
+        <meritBadge Mdate="03/11/13"> Swimming </meritBadge>
+      </scout>
+    </troop>
+    <troop Tname="Lion" number="9000">
+      <scout>
+        <first> Jeff </first>
+        <last> Ryans </last>
+        <phone> 555-555-7777 </phone>
+        <address>
+          <street> 555 WW </street>
+          <city> Idaho Falls </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="3/11/10"> Tenderfoot </rank>
+        <meritBadge Mdate="3/1/10"> Camping </meritBadge>
+        <meritBadge Mdate="3/15/10"> Swimming </meritBadge>
+        <meritBadge Mdate="4/2/10"> Hiking </meritBadge>
+      </scout>
+      <scout>
+        <first> Chris </first>
+        <last> People </last>
+        <phone> 555-555-7777 </phone>
+        <address>
+          <street> 833 NNW </street>
+          <city> Idaho Falls </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="6/3/12"> Tenderfoot </rank>
+        <rank Rdate="9/12/12"> 2nd Class </rank>
+        <meritBadge Mdate="3/14/12"> Camping </meritBadge>
+        <meritBadge Mdate="5/10/12"> Swimming </meritBadge>
+      </scout>
+      <scout>
+        <first> Joey </first>
+        <last> Jolley </last>
+        <phone> 555-555-9999 </phone>
+        <address>
+          <street> 333 North </street>
+          <city> Idaho Falls </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="10/12/12"> Tenderfoot </rank>
+        <rank Rdate="05/01/13"> 2nd Class </rank>
+        <rank Rdate="08/14/13"> 1st Class </rank>
+        <meritBadge Mdate="10/13/12"> Camping </meritBadge>
+        <meritBadge Mdate="11/23/12"> Hiking </meritBadge>
+        <meritBadge Mdate="02/15/13"> Cooking </meritBadge>
+        <meritBadge Mdate="03/09/13"> First Aid </meritBadge>
+      </scout>
+      <scout>
+        <first> George </first>
+        <last> Bob </last>
+        <phone> 555-555-5555 </phone>
+        <address>
+          <street> 234 Apple </street>
+          <city> Idaho Falls </city>
+          <state> Idaho </state>
+        </address>
+        <rank Rdate="04/11/10"> Tenderfoot </rank>
+        <rank Rdate="07/22/10"> 2nd Class </rank>
+        <rank Rdate="01/25/11"> 1st Class </rank>
+        <rank Rdate="02/21/11"> Star </rank>
+        <meritBadge Mdate="03/21/10"> Technology </meritBadge>
+        <meritBadge Mdate="05/22/10"> Hiking </meritBadge>
+        <meritBadge Mdate="12/11/10"> First Aid </meritBadge>
+      </scout>
+      <scout>
+        <first> Jimmy </first>
+        <last> WilCox </last>
+        <phone> 555-555-4321 </phone>
+        <address>
+          <street> 999 Never St </street>
+          <city> Idaho Falls </city>
+          <state> Idaho </state>
+        </address>
+      </scout>
+    </troop>
+  </council>
+  <council Cname="Atlantic">
+    <troop Tname="Code" number="3333">
+      <scout>
+        <first> Luis </first>
+        <last> Lang </last>
+        <phone> 555-555-9876 </phone>
+        <address>
+          <street> 332 Lampshade </street>
+          <city> Boring </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="7/15/12"> Tenderfoot </rank>
+        <meritBadge Mdate="06/05/12"> Camping </meritBadge>
+        <meritBadge Mdate="05/01/12"> Hiking </meritBadge>
+      </scout>
+      <scout>
+        <first> Jordan </first>
+        <last> Rogers </last>
+        <phone> 555-444-4444 </phone>
+        <address>
+          <street> 5432 Venus </street>
+          <city> Boring </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="09/21/13"> Tenderfoot </rank>
+        <meritBadge Mdate="03/02/13"> Camping </meritBadge>
+        <meritBadge Mdate="05/13/13"> First Aid </meritBadge>
+        <meritBadge Mdate="08/23/13"> Fishing </meritBadge>
+      </scout>
+      <scout>
+        <first> Mike </first>
+        <last> John </last>
+        <phone> 555-444-3333 </phone>
+        <address>
+          <street> 564 Riverside </street>
+          <city> Boring </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="09/24/11"> Tenderfoot </rank>
+        <meritBadge Mdate="10/12/11"> Accounting </meritBadge>
+        <meritBadge Mdate="11/01/11"> Leatherwork </meritBadge>
+      </scout>
+      <scout>
+        <first> Bradly </first>
+        <last> Reaper </last>
+        <phone> 555-444-6666 </phone>
+        <address>
+          <street> 765 Center </street>
+          <city> Boring </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="03/12/10"> Tenderfoot </rank>
+        <rank Rdate="06/03/10"> 2nd Class </rank>
+        <meritBadge Mdate="01/31/10"> Cooking </meritBadge>
+        <meritBadge Mdate="02/11/10"> Hiking </meritBadge>
+        <meritBadge Mdate="03/01/10"> Swimming </meritBadge>
+      </scout>
+      <scout>
+        <first> Jimmy </first>
+        <last> Keith </last>
+        <phone> 555-444-3333 </phone>
+        <address>
+          <street> 765 Shore </street>
+          <city> Boring </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="02/11/12"> Tenderfoot </rank>
+        <meritBadge Mdate="11/15/13"> Swimming </meritBadge>
+        <meritBadge Mdate="12/23/13"> Cooking </meritBadge>
+        <meritBadge Mdate="03/31/13"> Running </meritBadge>
+        <meritBadge Mdate="04/23/13"> Hiking </meritBadge>
+        <meritBadge Mdate="05/15/13"> Camping </meritBadge>
+        <meritBadge Mdate="06/26/13"> Shooting </meritBadge>
+        <meritBadge Mdate="07/17/13"> First Aid </meritBadge>
+        <meritBadge Mdate="08/28/13"> Music </meritBadge>
+        <meritBadge Mdate="09/19/13"> Goverment </meritBadge>
+        <meritBadge Mdate="12/11/13"> Fishing </meritBadge>
+      </scout>
+    </troop>
+    <troop Tname="Breaker" number="1212">
+      <scout>
+        <first> John </first>
+        <last> Johnson </last>
+        <phone> 555-333-2222 </phone>
+        <address>
+          <street> 3243 Switch </street>
+          <city> Oregon City </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="07/11/12"> Tenderfoot </rank>
+        <rank Rdate="08/23/12"> 2nd Class </rank>
+        <rank Rdate="03/19/13"> 1st Class </rank>
+        <meritBadge Mdate="04/22/12"> Technology </meritBadge>
+      </scout>
+      <scout>
+        <first> Mike </first>
+        <last> Sammy </last>
+        <phone> 555-444-7777 </phone>
+        <address>
+          <street> 3333 Blazer </street>
+          <city> Oregon City </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="10/10/10"> Tenderfoot </rank>
+        <meritBadge Mdate="07/07/10"> Camping </meritBadge>
+        <meritBadge Mdate="08/08/10"> Hiking </meritBadge>
+        <meritBadge Mdate="09/09/10"> Swimming </meritBadge>
+      </scout>
+      <scout>
+        <first> David </first>
+        <last> Rose </last>
+        <phone> 555-666-7777 </phone>
+        <address>
+          <street> 2329 Long </street>
+          <city> Oregon City </city>
+          <state> Oregon </state>
+        </address>
+        <meritBadge Mdate="11/12/12"> Camping </meritBadge>
+        <meritBadge Mdate="12/11/12"> Swimming </meritBadge>
+      </scout>
+      <scout>
+        <first> Allan </first>
+        <last> Bored </last>
+        <phone> 555-666-8888 </phone>
+        <address>
+          <street> 443 Killer </street>
+          <city> Oregon City </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="11/30/11"> Tenderfoot </rank>
+        <rank Rdate="03/05/12"> 2nd Class </rank>
+        <meritBadge Mdate="05/12/11"> Cooking </meritBadge>
+        <meritBadge Mdate="11/30/11"> Camping </meritBadge>
+        <meritBadge Mdate="10/22/12"> Hiking </meritBadge>
+      </scout>
+      <scout>
+        <first> Fred </first>
+        <last> George </last>
+        <phone> 555-999-8888 </phone>
+        <address>
+          <street> 3333 Raven </street>
+          <city> Oregon City </city>
+          <state> Oregon </state>
+        </address>
+        <rank Rdate="09/10/11"> Tenderfoot </rank>
+      </scout> 
+    </troop>
+  </council>
+</bsa>

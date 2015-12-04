@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <script type="text/javascript">
+      function user()
+      {
+        var url = document.getElementById("URL").value;
+        var xxhr = new XMLHttpRequest();
+        xxhr.onreadystatechange = function()
+         {
+          if (xxhr.readyState === 4 && xxhr.status === 200)
+          {
+              document.getElementById("user").innerHTML = xxhr.responseText;
+          }
+     
+         }
+        xxhr.open("GET", url, true);
+        xxhr.send(null);
+      }
+
+      function info(num)
+      {
+        document.getElementById("countries").innerHTML = "";
+        if (num === 1)
+        {
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function()
+          {
+           if (xhr.readyState === 4 && xhr.status === 200)
+           {
+               alert("hello");
+            document.getElementById("countries").innerHTML = xhr.responseText;
+           }
+          }
+         xhr.open("GET", "http://localhost:1024/~ercanbracks/usa.txt", true);
+         xhr.send(null);
+        }
+       else if (num === 2)
+       {
+        var xhr2 = new XMLHttpRequest();
+        xhr2.onreadystatechange = function()
+        {
+         if (xhr2.readyState == 4 && xhr2.status == 200)
+          {
+           document.getElementById("countries").innerHTML = xhr2.responseText;
+          }
+        }
+         xhr2.open("GET", "http://157.201.194.254/~ercanbracks/mexico.txt", true);
+         xhr2.send(null);
+       }
+       else if (num === 3)
+       {
+        var xhr3 = new XMLHttpRequest();
+        xhr3.onreadystatechange = function()
+       {
+        if (xhr3.readyState == 4 && xhr3.status == 200)
+       {
+        document.getElementById("countries").innerHTML = xhr3.responseText;
+       }
+       }
+       xhr3.open("GET", "http://157.201.194.254/~ercanbracks/canada.txt", true);
+       xhr3.send(null);
+       }
+       else if (num === 4)
+       {
+       var xhr4 = new XMLHttpRequest();
+       xhr4.onreadystatechange = function()
+      {
+      if (xhr4.readyState === 4 && xhr4.status === 200)
+      {
+      document.getElementById("countries").innerHTML = xhr4.responseText;
+      }
+      }
+      xhr4.open("GET", "http://157.201.194.254/~ercanbracks/russia.txt", true);
+      xhr4.send(null);
+      }      
+      }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title> Assignment 09 </title>
+   
+    <style type="text/css">
+          header
+          {
+            background-color:#383A3A;
+            text-align:center;
+            color:white;
+          }
+          #content
+          {
+            text-align:center;
+            background-color:#8D8A88;
+            padding:10px;
+          }
+          body
+          {
+            background-color:grey;
+          }
+          
+          #select
+          {
+            position:relative;
+            left:40%;
+            text-align:left;
+            width:250px;
+            background-color:red; 
+          }
+   
+    </style>
+  </head>
+  <body>
+    <header>      
+        <h1> AJAX Assignment</h1>
+    </header>
+      <div id="content"> 
+        <h3>Please select a country</h3>
+        <form id="select">
+          <input type="radio" name="country" onclick="info(1);"/> United States 
+          <br/>
+          <input type="radio" name="country" onclick="info(2);"/> Mexico 
+          <br/>
+          <input type="radio" name="country" onclick="info(3);"/> Canada 
+          <br/>
+          <input type="radio" name="country" onclick="info(4);"/> Russia 
+          <br/>
+          URL <input type="text" id="URL"/>
+          <br/>
+          <input type="button" value="Submit" onclick="user();"/>
+      </div>
+      <div>
+        <pre id = "countries">
+        </pre>
+      </div>
+      <div>
+        <pre id = "user">
+        </pre>
+      </div>
+    </div>
+  </body>
+</html>

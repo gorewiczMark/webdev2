@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Mileage Calculator</title>
+    <script type="text/javascript";>
+      function setFocus()
+      {
+       document.getElementById("sc").focus();
+      }
+
+      function sendCall(sc,ss,ec,es)
+      {
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function()
+      {
+      if (xhr.readyState == 4 && xhr.status == 200)
+      {
+      xxml = xhr.responseXML;
+      xml = xxml.documentElement;
+      mile = xml.getElementsByTagName("miles");
+      temp = mile[0].childNodes[0].nodeValue;
+      display();
+      }
+      }
+      var url = "http://157.201.194.254/cgi-bin/ercanbracks/mileage/mileageAjaxXML" + "?startCity=" 
+      + sc + "&startState=" + ss + "&endCity=" + ec + "&endState=" + es;
+      xhr.open("GET", url, true);
+      xhr.send(null);
+      }
+
+      function display()
+      {
+      var response = "Start Location " + sc + ", " + ss + " --- End Location " + ec + ", " + es + " --- Miles: " + temp;
+      document.getElementById("response").innerHTML = response;
+      var response2 = "Travel Modes: ";
+      modes = xml.getElementsByTagName("mode");
+      for (var i=0;i<modes.length;i++)
+                       { 
+                       response2 += modes[i].childNodes[0].nodeValue + " ";
+                       }
+      document.getElementById("mode").innerHTML = response2;
+      }
+      
+      function checkForm()
+      {
+      sc = document.getElementById("srtCity").value;
+      ss = document.getElementById("srtState").value;
+      ec = document.getElementById("endCity").value;
+      es = document.getElementById("endState").value;
+      
+      if (sc == 0)
+      {
+      alert("Error: Please Fill Start City");
+      setFocus();
+      return false;
+      }
+      else if (ss == 0)
+      {
+      alert("Error: Please Fill Start State");
+      document.getElementById("ss").focus();
+      return false;
+      }
+      else if (ec == 0)
+      {
+      alert("Error: Please Fill End City");
+      document.getElementById("ec").focus();
+      return false;
+      }
+      else if (es == 0)
+      {
+      alert("Error: Please Fill End State");
+      document.getElementById("es").focus();
+      return false;
+      }
+      else
+      {
+      sendCall(sc,ss,ec,es);
+      }
+      }
+      
+    </script>
+  </head>
+  <body id="index" class="home" onload="setFocus();" >
+    <div id="container">
+      <div class="header">
+        <h1> Mileage Calculator </h>
+      </div>
+      <div class="content" style="position: absolute; left: 500px;">
+        <form>
+          Start City<br/>
+          <input id="srtCity" name="startCity" type="text"/><br/>
+          Start State (Example:CA)<br/>
+          <input id="srtState" type="text" name="startState" maxlength="2"/><br/>
+          End City<br/>
+          <input id="endCity" name="endCity" type="text"/><br/>
+          End State (Example: OR)br/>
+          <input id="endState" type="text" name="endState" maxlength="2"/><br/>
+          <input type="button" value="Submit" onclick="checkForm();"/>
+          <input type="reset" value="Clear" onclick="setFocus();"/>
+        </form>
+      </div>
+      <div id="response" style="position: absolute; top: 320px; left: 470px;">
+      </div>
+      <div id="mode" style="position: absolute; top: 340px; left: 470px;">
+      </div>
+    </div>
+  </body>
+</html>
+

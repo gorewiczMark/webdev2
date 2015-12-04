@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="some.org/8787">
+  
+  <!--List of simple data types-->
+  <xs:element name="first" type="xs:string"/>
+  <xs:element name="last" type="xs:string"/>
+  <xs:element name="phone" type="xs:string"/>
+  <xs:element name="street" type="xs:string"/>
+  <xs:element name="city" type="xs:string"/>
+  <xs:element name="state" type="xs:string"/>
+  <xs:element name="rank" type="xs:string"/>
+  <xs:element name="meritbadge" type="xs:string"/>
+  
+
+  <!--Attributes-->
+  <xs:attribute name="Cname" type="xs:string"/>
+  <xs:attribute name="Tname" type="xs:string"/>
+  <xs:attribute name="number" type="xs:string"/>
+  <xs:attribute name="Rdate" type="xs:string"/>
+  <xs:attribute name="Mdate" type="xs:string"/>
+
+  <!--Complex Elements-->
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="street"/>
+        <xs:element ref="city"/>
+        <xs:element ref="state"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="scout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="first"/>
+        <xs:element ref="last"/>
+        <xs:element ref="phone"/>
+        <xs:element ref="address"/>
+        <xs:element ref="rank" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:attribute ref="Rdate" use="required"/>
+        <xs:element ref="meritBadge" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:attribute ref="Mdate" use="required"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="troop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="scout" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="Tname" use="required"/>
+      <xs:attribute ref="number" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="council">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="troop" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="Cname" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

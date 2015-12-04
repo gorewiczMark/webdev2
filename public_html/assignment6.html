@@ -1,0 +1,235 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Assignment 6</title>
+    <script type="text/javascript">
+     function isNumberKey(evt)
+     {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+     };
+     function namef()
+     {
+         if (document.getElementById("first").value === "")
+         {
+             document.getElementById("fnamealert").style.visibility = "visible";
+         }
+         return;
+     };
+     function lname()
+     {
+         if (document.getElementById("lastname").value === "")
+         {
+             document.getElementById("lnamealert").style.visibility = "visible";
+         }
+         return;
+     };
+     function phonenumber()  
+     {  
+       var inputtxt = document.getElementById("phone");
+       var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;  
+       if(inputtxt.value.match(phoneno))
+       {  
+         return true;  
+       }  
+       else  
+       {  
+         document.getElementById("phonealert").style.visibility = "visible";
+         return false;  
+       }  
+     };
+     function creditcard()
+     {
+         var input = document.getElementById("cardcredit");
+         var num = /^\d{16}$/;
+         if (input.value.match(num))
+         {
+             return true;
+         }
+         else
+         {
+           document.getElementById("creditalert").style.visibility = "visible";
+           return false;
+         }
+     };
+     function address()
+     {
+         if (document.getElementById("address").value === "")
+         {
+             document.getElementById("addalert").style.visibility = "visible";
+         }
+         return;
+     }
+     function alertset()
+     {
+         document.getElementById("fnamealert").style.visibility = "hidden";
+         document.getElementById("lnamealert").style.visibility = "hidden";
+         document.getElementById("creditalert").style.visibility = "hidden";
+         document.getElementById("addalert").style.visibility = "hidden";
+         document.getElementById("phonealert").style.visibility = "hidden";
+         document.getElementById("monalert").style.visibility = "hidden";
+         document.getElementById("yralert").style.visibility = "hidden";
+     };
+     function mon()
+     {
+       var monin = document.getElementById("month").value;
+       if (monin > 0 && monin < 13)
+       {
+           return true;
+       }
+       else 
+       {
+           document.getElementById("monalert").style.visibility = "visible";
+       }
+     };
+     function year()
+     {
+         var yr = document.getElementById("year").value;
+         if (yr > 11)
+         {
+             return true;
+         }
+         else
+         {          
+            document.getElementById("yralert").style.visibility = "visible";   
+         }     
+    };
+     function validate()
+     {
+         alertset();
+         namef();
+         lname();
+         phonenumber();
+         address();
+         creditcard();
+         mon();
+         year();
+     }
+     function calculateTotal()
+     {
+         var a = 0;
+         var b = 0;
+         var c = 0;
+         var d = 0;
+         
+         if (document.getElementById("product1").checked === true)
+         {
+             a = 2.90;
+         }
+         if (document.getElementById("product2").checked === true)
+         {
+             b = 4.00;
+         }
+         if (document.getElementById("product3").checked === true)
+         {
+             c = 8.00;   
+         }     
+         if (document.getElementById("product4").checked === true)
+         {
+             d = 2.00;
+         }
+         
+         document.getElementById("total").value = (a + b + c + d).toFixed(2);
+         
+     }
+    </script>
+  </head>
+  <body onload="setFocus()">
+    <h1> Order Form </h1>
+    <form id="info">
+      <table>
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" id="first"
+                     onchange="namef()"></td>
+          <td id="fnamealert" style="visibility:hidden;">Required</td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" id="lastname"
+                     onchange="lname()"></td>
+          <td id="lnamealert" style="visibility:hidden;">Required</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td><textarea id="address"></textarea></td>
+          <td id="addalert" style="visibility:hidden;">Required</td>
+        </tr>
+        <tr>
+          <td>Phone: (Example 555-234-2314)</td>
+          <td><input type="text" id="phone" 
+                     onkeypress="return isNumberKey(event)"
+                     onchange="phonenumber()"
+                     maxlength="12">
+          <td id="phonealert" style="visibility:hidden;">Required</td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td> Fireflies</td> <td> $2.90 </td>  
+          <td><input type="checkbox" name="product" id="product1"
+                     onchange="calculateTotal()"></td>
+        </tr>
+        <tr>
+          <td>Grape Jelly</td> <td> $4.00 </td>      
+          <td><input type="checkbox" name="product" id="product2"
+                     onchange="calculateTotal()"></td>
+        </tr>
+        <tr>
+          <td>Dr Pepper</td> <td> $8.00 </td>  
+          <td><input type="checkbox" name="product" id="product3"
+                     onchange="calculateTotal()"></td>
+        </tr>
+        <tr>
+          <td>Markers</td> <td> $2.00 </td>  
+          <td><input type="checkbox" name="product" id="product4"
+                     onchange="calculateTotal()"></td>
+        </tr>
+        <tr>  
+          <td>Total:</td>
+          <td><input type="textbox" readonly id="total"></td>
+        </tr>
+      </table>
+        <table id="credit">
+            <tr>
+                <td><input type="radio" name="card" value="visa"
+                           checked="checked">Visa
+                <input type="radio" name="card" value="master">Master
+                <input type="radio" name="card" value="amer">
+                        American Express</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="cardcredit" size="16"
+                     onkeypress="return isNumberKey(event)"
+                     onchange="creditcard()"
+                     maxlength="16"></td>
+                <td id="creditalert" style="visibility:hidden;">Required</td>        
+            </tr>
+            <tr><td>Expiration date</td>
+            </tr>
+            <tr>
+              <td>
+                  Month (1-12)
+                  <input id="month" type="text" maxlength="2" size="2"
+                   onchange="mon()" onkeypress="return isNumberKey(event)">
+                  Year 20(12)
+                  <input type="text" id="year" maxlength="2" size="2"
+                   onchange="years()"onkeypress="return isNumberKey(event)">    
+                </td>
+            </tr>
+            <tr>
+                <td id="monalert" style="visibility: hidden">Invalid Month</td>
+                <td id="yralert" style="visibility: hidden">Invalid Year</td>
+            </tr>
+        </table>
+        <button type="button" onclick="validate()">Submit</button>
+        <button type="reset" onclick="alertset()">Reset</button>
+    </form>
+  </body>
+</html>

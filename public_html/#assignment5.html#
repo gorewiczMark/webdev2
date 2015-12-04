@@ -1,0 +1,130 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Assignment 5</title>  
+    <script type="text/javascript">
+     function setFocus()
+     {
+        document.getElementById("loanamt").focus();
+     };
+
+     function isNumberKey(evt)
+     {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+     };
+     function validate()
+     {
+        var val = "true";
+        if (document.getElementById("loanamt").value == "")
+        {
+          document.getElementById("amt").style.visibility="visible";
+          document.getElementById("loanamt").focus();
+          val = "false";
+        }
+        if (document.getElementById("loanterm").value == "")
+        {        
+          document.getElementById("time").style.visibility="visible";
+
+          val = "false";
+        }
+        if (document.getElementById("APR").value == "")
+        {
+         document.getElementById("int").style.visibility="visible";  
+         val = "false"
+        }
+        
+        return val;
+     }
+     function calculate()
+     {       
+        if (validate() == "true")
+        {
+          var interest = (document.getElementById("APR").value / 100) / 12;
+          var numPayments = (12 * document.getElementById("loanterm").value);
+          var monthPay = (document.getElementById("loanamt").value *
+                       ((interest * Math.pow((1 + interest),numPayments)) /
+                       ( Math.pow((1+interest),numPayments)-1)));
+          var pay = Math.pow(2,2);
+          document.getElementById("monPay").value = monthPay.toFixed(2);
+          reset();
+        }
+     };
+     function formreset()
+        {
+          document.getElementById("calc").reset();
+          reset();
+        }
+     function reset()
+      {
+        document.getElementById("amt").style.visibility="hidden";
+        document.getElementById("int").style.visibility="hidden";
+        document.getElementById("time").style.visibility="hidden";
+      }
+    </script>
+    <style type="text/css">
+      html,body
+      {
+        text-align:center;
+        background-color:blue;
+      }
+      #calculator
+      {
+        font-size:x-large;
+        align:center;
+        margin:10px auto;
+        height:300px;
+        width:500px;
+        color:white;
+        background-color:black;
+        opacity:0.8;
+      }
+      .alert
+      {
+        visibility:hidden;
+      }
+    </style>
+  </head>
+  <body onload="setFocus()">
+    <h1> Mortgage Calculator </h1>
+    <div id="calculator">
+      <form id="calc">
+        <table>
+          <tr> 
+            <td>Loan Ammount ($)</td> 
+            <td><input type="textbox" onkeypress="return isNumberKey(event)"
+                       onchange="calculate()" id="loanamt"/> </td>
+            <td class="alert" id="amt">Required</td>
+          </tr>
+          <tr>
+            <td>Loan Term (in Years)</td>
+            <td><input type="textbox" onkeypress="return isNumberKey(event)"
+                       onchange="calculate()" id="loanterm" maxlength="2"/> </td>
+            <td class="alert" id="time">Required</td>
+          </tr>
+          <tr>
+            <td>Annual Percentage Rate</td>
+            <td><input type="textbox" onkeypress="return isNumberKey(event)"
+                       onchange="calculate()" id="APR" maxlength="2"/> </td>
+            <td class="alert" id="int">Required</td>
+          <tr/>
+          <tr>
+            <td>Monthly Payment </td>
+            <td><input type="textbox" readonly id="monPay"></td>
+          <tr/>
+          <tr>
+            <td><button type="button" onclick="calculate()">
+                Calculate</button></td>
+            <td> <input type="button" onclick="formreset()" value="Reset"></td>
+          </tr>
+        <table>
+      </form>
+    </div>
+  </body>
+</html>

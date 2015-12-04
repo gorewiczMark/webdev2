@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+    <title>Assignment 4</title>
+    <meta charset = "utf-8" />
+    <link rel="stylesheet" type="text/css" href="assign4Style.css"/>
+  </head>
+  <body>
+    <img 
+    <div id="container">
+      <header>
+        <h1> Gorewicz Soda Emporiun </h1>
+        </br>
+        <a href="assign4Prod.html"> Products </a>
+      </header>
+      <div id="leftMenu">
+        <p style="text-align:center;"> Site Navagation </p>
+        <a href="assign4Prod.html#coke">Coke</a>
+      </div> <!--left menu-->       
+      <div id="rightMenu">
+        <p> right </p>
+      </div> <!--right menu-->
+      <div id="content">
+        <h1> This will be assignment #4 </h1>
+        <h2> This page is currently under construction.
+         Sorry for the inconvenience </h2>
+      </div> <!--content-->  
+      <footer>
+        <p>&copy 2013 Mark Gorewicz</p>
+      </footer>
+    </div> <!--container-->
+  </body>
+</html>

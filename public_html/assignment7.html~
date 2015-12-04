@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Assignment 7</title>
+  </head>
+  <body>
+    <h1> XML </h1>
+    <a href="assign07_dtd.xml">assign07_dtd.xml</a>
+    <a href="assign07_xsd.xml">assign07_xsd.xml</a>
+    <a href="assign07.xsd">assign07.xsd</a>
+    <a href="assign07.dtd">assign07.dtd</a>
+
+  </body>
+</html>

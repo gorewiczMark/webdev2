@@ -1,0 +1,220 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Assignment 13</title>
+    <style type="text/css">
+      body
+      {
+
+        background-color:gray;
+        text-align:center;
+      }
+      #file
+      {
+        color:white;
+      }
+    </style>
+    <script type="text/javascript">
+      function isNumberKey(evt)
+     {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+     };
+
+      function validate()
+      {
+            error = false;
+         if (document.getElementById("Fname").value == "")
+         { document.getElementById("Fname").style.backgroundColor = "red";
+            error = true; }
+         if (document.getElementById("Lname").value == "")
+         { document.getElementById("Lname").style.backgroundColor = "red";
+            error = true; }
+         if (document.getElementById("ID").value == "")
+         { document.getElementById("ID").style.backgroundColor = "red";
+           error = true; }
+         if (document.getElementById("skill").value == " ")
+         { document.getElementById("skill").style.backgroundColor = "red";
+           error = true; }
+         if (document.getElementById("instr").value == " ")
+         { document.getElementById("instr").style.backgroundColor = "red";
+            error = true; }
+         if (document.getElementById("build").value == " ")
+         { document.getElementById("build").style.backgroundColor = "red";
+            error = true; }
+         if (document.getElementById("room").value == " ")
+         { document.getElementById("room").style.backgroundColor = "red";
+            error = true; }
+         if (document.getElementById("time").value == " ")
+         { document.getElementById("time").style.backgroundColor = "red";
+            error = true; }
+
+         if (document.getElementById("duet").checked)
+         {
+            if (document.getElementById("Fname2").value == "")
+            { document.getElementById("Fname2").style.backgroundColor = "red";
+              error = true; }
+            if (document.getElementById("Lname2").value == "")
+            { document.getElementById("Lname2").style.backgroundColor = "red";
+              error = true; }
+             if (document.getElementById("ID2").value == "")
+            { document.getElementById("ID2").style.backgroundColor = "red";
+              error = true; }
+         }
+        if (error == false)
+        {
+          return true;
+        }       
+        return false;
+      }
+
+      function send()
+      {
+      }
+
+      function info()
+      {       
+         var URL = "http://localhost:1024/cgi-bin/gor08001/assign13a.rb";
+         document.getElementById("info").innerHTML = "";
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function()
+          {
+           if (xhr.readyState === 4 && xhr.status === 200)
+           {
+               
+               document.getElementById("info").innerHTML = 
+                                  xhr.responseText;
+           }
+          }
+         xhr.open("GET", URL ,true);
+         xhr.send(null);
+      }
+
+      function showPartner()
+      {
+          document.getElementById("partner").style.display = "inherit";
+      }
+      function hidePartner()
+      {
+          document.getElementById("partner").style.display = "none";
+      }
+      function process()
+      {
+        alert("hello");
+        if (validate() == true)
+        {
+           submit();
+           alert("here");
+        }
+      }
+     </script>
+  </head>
+  <body onload="info()">
+    <h1>Piano Festival </h1>
+    <div id = "content">
+      <form id="festival"
+            onsubmit="return validate()"
+            action="http://localhost:1024/cgi-bin/gor08001/assign13.rb"
+            method = "get">
+          <input type="radio" value="Solo" checked="checked"
+                 name="perform" onclick="hidePartner();"> Solo </input>
+          <input type="radio"  value="Duet" id="duet"
+                 name="perform" onclick="showPartner();"> Duet </input>
+          <input type="radio" value="Concerto" 
+                 name="perform" onclick="hidePartner();"> Concerto </input>
+          </br>
+          First Name-------------------LastName-------------------ID Number 
+          <br/>
+          <input type="text" id="Fname" 
+                 name="Fname" onchange="checkFirstName();"/> 
+          <input type="text" id="Lname" 
+                 name="Lname" onchange="checkLastName();"/>
+          <input type="text" id="ID" name="ID"
+                 onkeypress="return isNumberKey(event)"/> <br/>
+          <div id="partner" style="display:none;">
+          <input type="text" name="Fname2" id="Fname2" 
+                 onchange="checkFirstName2();"/> 
+          <input type="text" id="Lname2" name="Lname2" 
+                 onchange="checkLastName2();"/> 
+          <input type="text" id="ID2" name="ID2" 
+                 onkeypress="return isNumberKey(event)""/>
+          </div> <!--partner-->
+          <br/>
+          Skill Level
+          <select id="skill" name="skill">
+            <option value=" "> </option>
+            <option value="Beginner">Beginner</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Medium Intermediate">Medium Intermediate</option>
+            <option value="Almost Expert">Almost Expert</option>
+            <option value="Pro">Pro</option>
+          </select>
+          Instrument
+          <select id="instr" name="instrument">
+            <option value=" "> </option>
+            <option value="Piano">Piano</option>
+            <option value="Voice">Voice</option>
+            <option value="String">String</option>
+            <option value="Organ">Organ</option>
+            <option value="Other">Other</option>
+          </select><br/>
+          Building
+          <select id="build" name="build">
+            <option value=" "> </option>
+            <option value="Ricks">Ricks</option>
+            <option value="Taylor">Taylor</option>
+            <option value="MC">MC</option>
+            <option value="Austin">Austin</option>
+            <option value="Snow">Snow</option>
+          </select>
+          Room#
+          <select id="room" name="room" 
+                 onchange="checkRoom();"/><br/>
+            <option value=" "> </option>
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="103">103</option>
+            <option value="104">104</option>
+            <option value="105">105</option>
+            <option value="106">106</option>
+            <option value="107">107</option>
+          </select>
+          Time
+          <select id="time" name="time">
+            <option value=" "> </option>
+            <option value="8:00AM">8:00AM</option>
+            <option value="8:30AM">8:30AM</option>
+            <option value="9:00AM">9:00AM</option>
+            <option value="9:30AM">9:30AM</option>
+            <option value="10:00AM">10:00AM</option>
+            <option value="10:30AM">10:30AM</option>
+            <option value="11:00AM">11:00AM</option>
+            <option value="11:30AM">11:30AM</option>
+            <option value="12:00PM">12:00PM</option>
+            <option value="12:30PM">12:30PM</option>
+            <option value="1:00PM">1:00PM</option>
+            <option value="1:30PM">1:30PM</option>
+            <option value="2:00PM">2:00PM</option>
+            <option value="2:30PM">2:30PM</option>
+            <option value="3:00PM">3:00PM</option>
+            <option value="3:30PM">3:30PM</option>
+            <option value="4:00PM">4:00PM</option>
+            <option value="4:30PM">4:30PM</option>
+          </select><br/>
+          <input type="submit" id="reg" onclick="info();"/>
+          <input type="reset" value="Reset" onclick="setFocus();"/>
+      </form>
+    </div>
+    <div id="file">
+      <pre id="info">
+      </pre>
+    </div>
+  </body>
+</html>
